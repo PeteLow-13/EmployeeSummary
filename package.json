@@ -1,0 +1,26 @@
+{
+  "name": "employeesummary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeteLow-13/EmployeeSummary.git"
+  },
+  "author": "pete",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PeteLow-13/EmployeeSummary/issues"
+  },
+  "homepage": "https://github.com/PeteLow-13/EmployeeSummary#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
