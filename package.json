@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/PeteLow-13/EmployeeSummary#readme",
   "dependencies": {
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "jest": "^26.4.2",
+    "test": "^0.6.0"
   }
 }

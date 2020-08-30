@@ -13,6 +13,7 @@ const render = require("./lib/htmlRender");
 
 // Write code to use inquirer to gather information about the development team members,
 
+//questions which will be used for employee info across all roles
 var questions =  [{
     type: 'input',
     name: 'name',
@@ -31,6 +32,7 @@ var questions =  [{
     message: 'What is your email?',
     default: '',
   },
+  //this question determines role which generates correct prompt for role specific question
   {
     type: 'list',
     name: 'role',
@@ -39,51 +41,48 @@ var questions =  [{
     default: 'Employee',
   },
 ];
-
+//asks all questions with the llast being chosen by role
 inquirer.prompt(questions).then((answer) => {
     const{name,id,email} = answer;
-    if( answer.role = 'Engineer'){
+    
+    if(answer.role === 'Engineer'){
         inquirer.prompt ([ 
             { 
                 type: 'input',
-                name: 'gitHub',
+                name: 'github',
                 message: 'What is your Github user name?',
-                default: '',
             },
-    ]).then((answer) => {
-        const{github} = answer;
-        let engineer = new Engineer (name,id,email,github);
-        console.log(engineer)
-    })
-
-   };
-    if(answer.role = 'Intern'){
+            ]).then((answer) => {
+                const{github} = answer;
+                let engineer = new Engineer (name,id,email,github);
+                console.log(engineer)
+            })
+    }
+    if (answer.role === 'Intern'){
         inquirer.prompt([
             {
                 type: 'input',
                 name: 'school',
                 message: 'What is your school?',
-                default: '',
             },
-        ]).then((answer => {
-            const{school} = answer;
-            let intern = new Intern (name,id,email,shcool);
-            console.log(intern)
-        }))
+            ]).then((answer) => {
+                const{school} = answer;
+                let intern = new Intern (name,id,email,school);
+                console.log(intern)
+            })
     }
-    if(answer.role = 'Manager'){
+    if (answer.role === 'Manager'){
         inquirer.prompt([
             {
                 type: 'input',
                 name: 'officenumber',
                 message: 'What is your office number?',
-                default: '',
               },
-        ]).then((answer => {
-            const{officenumber} = answer;
-            let manager = new Manager (name,id,email,officenumber);
-            console.log(manager)
-        }))
+            ]).then((answer) => {
+                const{officenumber} = answer;
+                let manager = new Manager (name,id,email,officenumber);
+                console.log(manager)
+            })
     }
 
     
