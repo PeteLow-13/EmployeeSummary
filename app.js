@@ -42,52 +42,88 @@ var questions =  [{
   },
 ];
 //asks all questions with the llast being chosen by role
-inquirer.prompt(questions).then((answer) => {
-    const{name,id,email} = answer;
-    
-    if(answer.role === 'Engineer'){
-        inquirer.prompt ([ 
-            { 
-                type: 'input',
-                name: 'github',
-                message: 'What is your Github user name?',
-            },
-            ]).then((answer) => {
-                const{github} = answer;
-                let engineer = new Engineer (name,id,email,github);
-                console.log(engineer)
-            })
-    }
-    if (answer.role === 'Intern'){
-        inquirer.prompt([
-            {
-                type: 'input',
-                name: 'school',
-                message: 'What is your school?',
-            },
-            ]).then((answer) => {
-                const{school} = answer;
-                let intern = new Intern (name,id,email,school);
-                console.log(intern)
-            })
-    }
-    if (answer.role === 'Manager'){
-        inquirer.prompt([
-            {
-                type: 'input',
-                name: 'officenumber',
-                message: 'What is your office number?',
-              },
-            ]).then((answer) => {
-                const{officenumber} = answer;
-                let manager = new Manager (name,id,email,officenumber);
-                console.log(manager)
-            })
-    }
+var team = [];
 
-    
-    console.log(answer)
+var addEmployee = function(){
+
+
+    inquirer.prompt(questions).then((answer) => {
+        const{name,id,email} = answer;
+
+       
+        if(answer.role === 'Engineer'){
+            inquirer.prompt ([ 
+                { 
+                    type: 'input',
+                    name: 'github',
+                    message: 'What is your Github user name?',
+                },
+                {
+                    type: 'confrim',
+                    name: 'addEmployees',
+                    message: 'do you want to add another employee?(y/N)'
+                  }
+                ]).then((answer) => {
+                    const{github} = answer;
+                    let engineer = new Engineer (name,id,email,github);
+                    team.push(engineer);
+                    addAnotherEmployee(answer);
+                })
+        }
+        if (answer.role === 'Intern'){
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'school',
+                    message: 'What is your school?',
+                },
+                {
+                    type: 'confrim',
+                    name: 'addEmployees',
+                    message: 'do you want to add another employee?(y/N)'
+                  }
+                ]).then((answer) => {
+                    const{school} = answer;
+                    let intern = new Intern (name,id,email,school);
+                    team.push(intern);
+                    addAnotherEmployee(answer);
+                })
+        }
+        if (answer.role === 'Manager'){
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'officenumber',
+                    message: 'What is your office number?',
+                },
+                {
+                    type: 'confrim',
+                    name: 'addEmployees',
+                    message: 'do you want to add another employee?(y/N)'
+                  }
+                ]).then((answer) => {
+                    const{officenumber} = answer;
+                    let manager = new Manager (name,id,email,officenumber);
+                    team.push(manager);
+                    addAnotherEmployee(answer);
+                })
+        }
+        
     });
+}
+
+var addAnotherEmployee = function(answer){
+
+    if( answer.addEmployees == 'y'){
+        addEmployee();
+    } else {
+        var renderedTeam = render(team);
+        console.log(renderedTeam)
+    }
+}
+addEmployee();
+
+
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 // After the user has input all employees desired, call the `render` function (required
