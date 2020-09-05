@@ -39,7 +39,7 @@ var questions =  [{
     message: 'What is employees role?',
     choices:['Manager', 'Engineer', 'Intern'],
     default: 'Employee',
-  },
+  }
 ];
 //asks all questions with the llast being chosen by role
 var team = [];
