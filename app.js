@@ -17,26 +17,26 @@ const render = require("./lib/htmlRender");
 var questions =  [{
     type: 'input',
     name: 'name',
-    message: 'What is your name?',
+    message: 'What is employee name?',
     default: '',
   },
   {
     type: 'input',
     name: 'id',
-    message: 'What is your id?',
+    message: 'What is employee id?',
     default: '',
   },
   {
     type: 'input',
     name: 'email',
-    message: 'What is your email?',
+    message: 'What is employee email?',
     default: '',
   },
   //this question determines role which generates correct prompt for role specific question
   {
     type: 'list',
     name: 'role',
-    message: 'What is your role?',
+    message: 'What is employees role?',
     choices:['Manager', 'Engineer', 'Intern'],
     default: 'Employee',
   },
@@ -56,7 +56,7 @@ var addEmployee = function(){
                 { 
                     type: 'input',
                     name: 'github',
-                    message: 'What is your Github user name?',
+                    message: 'What is employee Github user name?',
                 },
                 {
                     type: 'confrim',
@@ -75,7 +75,7 @@ var addEmployee = function(){
                 {
                     type: 'input',
                     name: 'school',
-                    message: 'What is your school?',
+                    message: 'What is intern school?',
                 },
                 {
                     type: 'confrim',
@@ -94,7 +94,7 @@ var addEmployee = function(){
                 {
                     type: 'input',
                     name: 'officenumber',
-                    message: 'What is your office number?',
+                    message: 'What is employee office number?',
                 },
                 {
                     type: 'confrim',
@@ -122,6 +122,8 @@ var addAnotherEmployee = function(answer){
     }
 }
 addEmployee();
+
+
 
 
 // and to create objects for each team member (using the correct classes as blueprints!)
