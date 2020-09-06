@@ -4,8 +4,8 @@
 This can be used to generate an employee directory for different types of employees.
 ## Table of Contents
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [Images](#images)
+- [Repository](#repository)
 - [Questions](#questions)
 
 ## Usage
