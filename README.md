@@ -10,7 +10,7 @@ This can be used to generate an employee directory for different types of employ
 
 ## Usage
 
-This project utilizes inquirer to help generate employee contact info for three different types of compamny roles.
+This project utilizes inquirer to help generate employee contact info for three different types of compamny roles. When run through the comand line starting at the app.js file the user is prompted to answer a series of questions about different employees. After the last employee is added the HTML will be rendered in the output folder.
 
 ## Images
 
