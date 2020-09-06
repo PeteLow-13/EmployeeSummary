@@ -15,8 +15,11 @@ This project utilizes inquirer to help generate employee contact info for three 
 ## Images
 
 Screen shot of rendered contact page in browser: 
+
 ![Image](./assets/empsumm.png)
+
 Using the app in the comand line:
+
 ![Gif](./assets/empsumm.gif)
 
 ## Repository
